@@ -10,44 +10,46 @@ Hand Sign Digit Recognition
         <h1 class="display-2 font-weight-bold text-light"><i class="fas fa-cat"></i> and <i class="fas fa-dog"></i> Classifier</h1>
         <p class="lead font-weight-bold text-light">Do you want to find out whether it is a dog or a cat?<br>&hearts;Just drop your image &hearts;<br></p>
     </header>
-
-
-    <div class="row py-1">
-        <div class="col-lg-6 mx-auto">
-
+    
+        <div class="row py-1">
+          <!-- First column -->
+          <div class="col-lg-6 mx-auto">
+      
             <!-- Upload image input-->
             <form action="{{ url_for('predict_image_file') }}" enctype="multipart/form-data" method="POST">
-                <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-                    <input class="form-control form-control-sm border-0" id="upload" name="file" type="file">
-                    <div class="input-group-append">
-                        <label class="btn btn-light btn-sm m-0 rounded-pill px-3" for="upload"> 
-                            <i class="fa fa-cloud-upload mr-2 text-muted"></i>
-                            <small class="text-uppercase font-weight-bold text-muted">Choose file</small>
-                        </label>
-                    </div>
+              <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm w-75">
+                     
+                <input class="form-control form-control-sm border-0" id="upload" name="file" type="file">
+                <div class="input-group-append">
+                  <label class="btn btn-light btn-sm m-0 rounded-pill px-3" for="upload">
+                    <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+                    <small class="text-uppercase font-weight-bold text-muted">Choose file</small>
+                  </label>
                 </div>
-                
-                
-
-                <!-- Uploaded image area-->
-                <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box
-                    below.</p>
-                <div class="image-area mt-4"><img alt="" class="img-fluid rounded shadow-sm mx-auto d-block"
-                                                  id="imageResult" name="imageResult"
-                                                  src="#"></div>
-
-                <!-- Submit button-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col text-center">
-                            <input class="btn btn-primary my-3" type="submit"/>
-                        </div>
-                    </div>
-                </div>
+              </div>
+      
+              <!-- Submit button -->
+              <div class="text-center">
+                <input class="btn btn-primary my-3" type="submit" value="Submit"/>
+              </div>
             </form>
-
+      
+          </div>
+      
+          <!-- Second column -->
+          <div class="col-lg-6 mx-auto">
+      
+            <!-- Uploaded image area -->
+            <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
+            <div class="image-area mt-4">
+              <img alt="" class="img-fluid rounded shadow-sm mx-auto d-block" id="imageResult" name="imageResult" src="#" />
+            </div>
+      
+          </div>
         </div>
-    </div>
+
+      
+ 
 </div>
 
 {% endblock %}

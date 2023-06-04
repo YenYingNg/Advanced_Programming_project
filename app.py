@@ -1,8 +1,7 @@
 # Importing required libs
 from flask import Flask, render_template, request
-from model import preprocess_img, predict_result
-from PIL import Image
-
+from model import predict_result
+import base64
 
 # Instantiating flask app
 app = Flask(__name__)
@@ -18,29 +17,19 @@ def main():
 @app.route('/prediction', methods=['POST'])
 def predict_image_file():
     try:
-        if request.method == 'POST':
-            img_stream = request.files['file'].stream
-            tensor_img = preprocess_img(img_stream)
-            pred = predict_result(tensor_img)
-            return render_template("result.html", predictions=str(pred))
+        if request.method == 'POST':            
+            img_data = request.files['file'].read()
+            img_data = base64.b64encode(img_data).decode('utf-8')
+
+            img_stream = request.files['file'].stream      
+            pred = predict_result(img_stream)
+
+            return render_template("result.html", predictions=str(pred), img_data=img_data)
 
     except Exception as e:
         msg = "error: "+str(e)
         return render_template("result.html", err=msg)
 
-
-
-def image_info(img):
-    # img = Image.open(img_stream)
-            
-    # Get basic image information
-    image_format = img.format
-    image_size = img.size
-            
-    # Construct a string with the image information
-    info_str = f"Format: {image_format}<br>"
-    info_str += f"Size: {image_size}<br>"
-    return info_str
 
 
 # Driver code

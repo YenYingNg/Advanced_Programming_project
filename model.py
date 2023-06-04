@@ -1,12 +1,5 @@
 # Importing required libs
-import numpy as np
 from PIL import Image
-
-# from tensorflow.keras.models import load_model
-# from tensorflow.keras.preprocessing.image import img_to_array
-# from tensorflow.keras.applications import MobileNet
-
-
 import torch
 import torchvision.models as models
 import torchvision.transforms as transforms
@@ -17,7 +10,8 @@ import json
 with open('models/imagenet-simple-labels.json', 'r') as f:
     classes = json.load(f)
 
-model = models.vgg16(pretrained=True)
+# model = models.vgg16(weights="IMAGENET1K_V1")
+model = models.mobilenet_v3_small(weights="IMAGENET1K_V1")
 model.eval()
 
 preprocess = transforms.Compose([
@@ -28,14 +22,7 @@ preprocess = transforms.Compose([
 ])
 
 
-
-# Loading model
-# model = load_model('models/digit_model.h5')
-# model = MobileNet(weights='imagenet')
-
-
 # Preparing and pre-processing the image
-
 def preprocess_img(img_stream):
     image = Image.open(img_stream)
     input_tensor = preprocess(image)
@@ -43,33 +30,14 @@ def preprocess_img(img_stream):
     return input_batch
 
 # Make predictions
-def predict_result(input_batch):
+def predict_result(img_stream):
+    img_tensor = preprocess_img(img_stream)
    
-    # return str(input_batch)
     with torch.no_grad():
-        output = model(input_batch)
+        output = model(img_tensor)
 
     # Get the predicted class index
-    _, predicted_idx = torch.max(output, 1)
-    predicted_label = "xxxx"
+    _, predicted_idx = torch.max(output, 1)    
     predicted_label = classes[predicted_idx.item()]
-
-    # Print the predicted label
-    print('Predicted Label:', predicted_label)
     return predicted_label
 
-
-
-def preprocess_img_old(img_path):
-    op_img = Image.open(img_path)
-    img_resize = op_img.resize((224, 224))
-    img2arr = img_to_array(img_resize) / 255.0
-    img_reshape = img2arr.reshape(1, 224, 224, 3)
-    return img_reshape
-
-
-# Predicting function
-def predict_result_old(img):
-    # pred = model.predict(img)
-    # result = np.argmax(pred[0], axis=-1)
-    return "dupa"
