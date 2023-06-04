@@ -1,9 +1,10 @@
-# Hand Digit Image Recognition
+# Cats and dogs classifier
+The starting point for this project was an app (Hand Digit Image Recognition) developed by 
+[https://github.com/Sachin-crypto/Flask_Image_Recognition](Sachin Pal).
 
 This web app is made using Flask framework and is all about predicting the hand sign digit images based on the deep learning model trained using transfer learning.
 
 ![Python](https://img.shields.io/badge/python-8338ec)
-![Keras](https://img.shields.io/badge/keras-219ebc)
 ![Numpy](https://img.shields.io/badge/numpy-ffafcc)
 ![Pillow](https://img.shields.io/badge/pillow-00bbf9)
 ![Flask](https://img.shields.io/badge/flask-f72585)

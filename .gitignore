@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Logs
+*.log
+
+# Development server
+*.pid
+*.sock
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.tox/
+
+# Translations
+*.mo
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Compiled Python files
+*.pyc
+*.pyo
+
+# Compiled C extensions
+*.so
+
+# macOS / OS X specific files
+.DS_Store
+
+# Visual Studio Code specific files
+.vscode/
