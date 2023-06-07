@@ -17,11 +17,11 @@ Cats and Dogs Classifier
       
             <!-- Upload image input-->
             <form action="{{ url_for('predict_image_file') }}" enctype="multipart/form-data" method="POST">
-              <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm w-75">
+              <div class="input-group mb-3 px-2 py-2 rounded bg-white shadow-sm w-80">
                      
                 <input class="form-control form-control-sm border-0" id="upload" name="file" type="file">
                 <div class="input-group-append">
-                  <label class="btn btn-light btn-sm m-0 rounded-pill px-3" for="upload">
+                  <label class="btn btn-light btn-sm m-0 rounded px-3" for="upload">
                     <i class="fa fa-cloud-upload mr-2 text-muted"></i>
                     <small class="text-uppercase font-weight-bold text-muted">Choose file</small>
                   </label>
@@ -40,7 +40,7 @@ Cats and Dogs Classifier
           <div class="col-lg-6 mx-auto">
       
             <!-- Uploaded image area -->
-            <p class="font-italic text-dark text-center">The image uploaded will be rendered inside the box below.</p>
+            <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
             <div class="image-area mt-4">
               <img alt="" class="img-fluid rounded shadow-sm mx-auto d-block" id="imageResult" name="imageResult" src="#" />
             </div>
