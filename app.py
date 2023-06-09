@@ -19,11 +19,11 @@ def predict_image_file():
     try:
         if request.method == 'POST':            
             
-            img_stream = request.files['file'].stream      
-            pred = predict_result(img_stream)
-
             img_data = request.files['file'].read()
             img_data = base64.b64encode(img_data).decode('utf-8')
+            
+            img_stream = request.files['file'].stream      
+            pred = predict_result(img_stream)
 
             return render_template("result.html", predictions=str(pred), img_data=img_data)
 
