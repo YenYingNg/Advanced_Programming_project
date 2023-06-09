@@ -1,4 +1,4 @@
-# Importing required libs
+# Importing required libraries
 from PIL import Image
 import torch
 import torchvision.models as models
