@@ -2,7 +2,7 @@
 The starting point for this project was an app (Hand Digit Image Recognition) developed by 
 [https://github.com/Sachin-crypto/Flask_Image_Recognition](Sachin Pal).
 
-This web app is made using Flask framework and is all about predicting the hand sign digit images based on the deep learning model trained using transfer learning.
+Our web app is made using Flask framework and it predicts the cats and dogs images based on the deep learning model trained using transfer learning.
 
 ![Python](https://img.shields.io/badge/python-8338ec)
 ![Numpy](https://img.shields.io/badge/numpy-ffafcc)
@@ -10,14 +10,10 @@ This web app is made using Flask framework and is all about predicting the hand 
 ![Flask](https://img.shields.io/badge/flask-f72585)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-57cc99)
 
-# Glimpse
-
-https://user-images.githubusercontent.com/72191416/201943098-c8f5fd8b-ec7d-4e5d-883d-8b69109b946f.mp4
-
 # Dependencies
 
 - Flask
-- TensorFlow (Keras)
+- PyTorch
 - Numpy
 - Pillow (PIL)
 
