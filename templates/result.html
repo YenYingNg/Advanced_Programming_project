@@ -4,32 +4,20 @@ Prediction - A Cat or A Dog?
 {% endblock %}
 
 {% block content %}
-<div class="container py-5">
+<div class="cont">
 
-    <header class="text-white text-center">
-        <h1 class="display-2 font-weight-bold text-light"><i class="fas fa-cat"></i> and <i class="fas fa-dog"></i> Classifier</h1>
-        <p class="lead font-weight-bold mb-5">Ta-da! The prediction of the input image is...</p>
-    </header>
+  
 
 
-    <div class="row">
-        <div class="col-md-6 text-white text-center">
-            <h1 class="display-5">Prediction</h1>
-            {% if predictions %}
-            <h2 class="display-4 text-dark font-weight-bold">{{predictions}}</h2>
-            {% else %}
-            <h2 class="display-4 text-dark font-weight-bold">{{err}}</h2>
-            {% endif %}
-        </div>
 
-        <div class="col-md-6 text-white text-center">
+
             <div class="row">
                 <div class="col-sm-8 offset-sm-2">
-                    <h1 class="display-5">Image</h1>
+                    
                     {% if img_data %}
-                    <div class="image-area mt-2">
+                    
                         <img src="data:image/jpeg;base64,{{ img_data }}" alt="Uploaded Image"
-                            class="img-fluid rounded shadow-sm" />
+                            class="preim"  />
                     </div>
                     {% else %}
                     <h2 class="display-4 text-dark font-weight-bold">Problem with the image</h2>
@@ -38,7 +26,15 @@ Prediction - A Cat or A Dog?
             </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="pre">
+            <h1 class="display-5">It's a</h1>
+            {% if predictions %}
+            <h2 class="display-4 text-pink font-weight-bold">{{predictions}}!</h2>
+            {% else %}
+            <h2 class="display-4 text-dark font-weight-bold">{{err}}</h2>
+            {% endif %}
+        </div>
 
 </div>
 {% endblock %}

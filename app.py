@@ -12,6 +12,11 @@ app = Flask(__name__)
 def main():
     return render_template("index.html")
 
+# silly route
+@app.route('/silly')
+def silly():
+    return render_template('silly.html')
+
 
 # Prediction route
 @app.route('/prediction', methods=['POST'])

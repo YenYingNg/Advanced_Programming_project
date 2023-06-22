@@ -63,7 +63,7 @@ class CatsDogsClassifier(nn.Module):
 model = CatsDogsClassifier()
 
 # Load the model
-state_dict = torch.load('C:/Users/adamp/Desktop/Advanced_Programming_project-master/checkpoint.pth')
+state_dict = torch.load('C:/Users/Kapi/Desktop/1/Advanced_Programming_project-master/checkpoint.pth')
 model.load_state_dict(state_dict)
 model.eval()
 
