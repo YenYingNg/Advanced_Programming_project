@@ -1,5 +1,5 @@
 /*  ==========================================
-    SHOW UPLOADED IMAGE
+    SHOW UPLOADED IMAGE - old code, not used anymore
 * ========================================== */
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -20,7 +20,7 @@ $(function () {
 });
 
 /*  ==========================================
-    SHOW UPLOADED IMAGE NAME
+    SHOW UPLOADED IMAGE NAME - old code, not used anymore
 * ========================================== */
 var input = document.getElementById( 'upload' );
 var infoArea = document.getElementById( 'upload-label' );
